@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const { fontFamily } = import("tailwindcss/defaultTheme")
 module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -15,23 +16,46 @@ module.exports = {
       'gray3': '#B8B8B8',
       'gray4': '#EBEBEB',
       'grey': '#393e46',
-      'orange': '#f96d00',
-      'orange-2': '#c24d2c',
+      'orange-2': '#f96d00',
+      'orange': '#c24d2c',
       'orange-3': '#ff5722',
+      'purple': '#DCBFFF',
       'transparent': 'transparent'
 
      
 
     },
     fontFamily: {
-      'sans': ['ui-sans-serif', 'system-ui'],
-      'serif': ['ui-serif', 'Georgia'],
-      'Bakbak': ['Bakbak One', 'cursive'],
-      'Urbanist': ['Urbanist', 'sans-serif'],
-      'Inter': ['Inter', 'sans-serif'],
+      urbanist: ["var(--font-urbanist)"]
       
     },
     extend: {
+      animation: {
+        drive: 'drive 3s linear infinite',
+      },
+      keyframes: {
+        drive: {
+          '0%': {
+            marginLeft: '-364px',
+            opacity: 0,
+          },
+          '33.33%': {
+            transform: 'rotate(0deg)',
+            marginLeft: '-50px',
+            opacity: 1,
+          },
+          '66.66%': {
+            transform: 'rotate(-360deg)',
+            marginLeft: '-50px',
+            opacity: 1,
+          },
+          '100%': {
+            marginLeft: '264px',
+            transform: 'rotate(-360deg)',
+            opacity: 0,
+          },
+        },
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
